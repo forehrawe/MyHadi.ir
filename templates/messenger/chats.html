@@ -1,6 +1,6 @@
-<!DOCTYPE html>
-<html>
-<style>
+{% extends "base.html" %}
+
+{% block style %}
 
     body, html {
         background-image: url("{{ url_for('static', filename='images/bck.jpg') }} ");
@@ -115,22 +115,20 @@
     }
 
 
-</style>
+{% endblock style %}
 
 
 
-<head>
-    <meta http-equiv="Cache-Control" content="no-store" />
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+{% block head %}
+    
 
 
 <h2 style="color: white;">Conversation {{ conversation_id }}</h2>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-</head>
+{% endblock head %}
 
-<body>
+{% block content %}
   
 
 
@@ -161,8 +159,10 @@
     <i class="fas fa-paper-plane"></i>
   </button>
 </form>
+
+{% endblock content %}
   
-  <script>
+{% block scripts %}
 
 
   document.getElementById('chatForm').addEventListener('submit', function(e) {
@@ -209,24 +209,7 @@
     })
 
   }
-
-
-
-
-
-
-
-  </script>
-  
-
-
-</body>
-
-  
-  
-</html>
-
-
+{% endblock scripts %}
 
 
 

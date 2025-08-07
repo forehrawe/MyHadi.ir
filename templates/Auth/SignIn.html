@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <style>
+{% extends "base.html" %}
+{% block style %}
     * {
       box-sizing: border-box;
     }
@@ -94,9 +90,8 @@
     .btn:hover {
       background: #3a66c4;
     }
-  </style>
-</head>
-<body>
+{% endblock style %}
+{% block content %}
 
   <div class="register">
     <h1 class="p1">sign In</h1>
@@ -115,16 +110,10 @@
   
 
 
-</body>
+{% endblock content %}
 
 
-
-
-
-  
-
-</body>
-<script>
+{% block scripts %}
 
   function action(event, operation) {
     event.preventDefault();
@@ -182,5 +171,4 @@
   
 
 
-</script>
-</html>
+{% endblock scripts %}

@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Show Admins</title>
-  <style>
+{% extends "base.html" %}
+{% block title %}Show Admins{% endblock title %}
+{% block style %}
     * {
       box-sizing: border-box;
     }
@@ -79,9 +76,8 @@
 
 
 
-  </style>
-</head>
-<body>
+{% endblock style %}
+{% block content %}
 
   <div class="authadmin">
     <h1 class="p1">show_admins</h1>
@@ -107,17 +103,4 @@
   
 
 
-</body>
-
-
-
-
-
-  
-
-</body>
-</html>
-
-
-
-
+{% endblock content %}

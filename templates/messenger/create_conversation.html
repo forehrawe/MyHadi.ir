@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+{% extends "base.html" %}
+{% block head %}
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Create Conversation</title>
-</head>
-<body>
+    {% block title %}Create Conversation{% endblock title %}
+{% endblock head %}
+{% block content %}
     <div class="conv">
         <form method="POST">
             <input type="text" class="email" name="email" placeholder="Target Email" required />
@@ -16,8 +14,8 @@
         </form>
     </div>
     
-</body>
-<style>
+{% endblock content %}
+{% block style %}
 
 
 body, html {
@@ -82,5 +80,4 @@ body, html {
         text-decoration: none;
         font-family: verdana;
     }
-</style>
-</html>
+{% endblock style %}

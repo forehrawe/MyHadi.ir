@@ -1,37 +1,32 @@
-<!doctype html>
-<html lang="fa">
-<head>
-  <meta charset="UTF-8">
-  <title>Add Post</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+{% extends "base.html" %}
 
-</head>
-<body>
-    <header>
-        <h1>Add Post</h1>
-      </header>
+{% block title %}Add Post{% endblock title %}
+{% block head %}
+        <header>
+          <h1>Add Post</h1>
+        </header>
+{% endblock head %}
 
-<div class="menu">
-  <form method="POST">
-    
-    <input type="text" name="titlepost" class="inputs" placeholder="Post Title" required/>
-    <textarea name="bodypost" class="inputs" placeholder="Post Body" required></textarea>
-    <input type="submit" class="btn">
+{% block content %}
+      
 
-    {% if msg is not none %}
-        <p style="color: white;">{{ msg }}</p>
-    {% endif %}
+  <div class="menu">
+    <form method="POST">
+      
+      <input type="text" name="titlepost" class="inputs" placeholder="Post Title" required/>
+      <textarea name="bodypost" class="inputs" placeholder="Post Body" required></textarea>
+      <input type="submit" class="btn">
 
-  </form>
-</div>
+      {% if msg is not none %}
+          <p style="color: white;">{{ msg }}</p>
+      {% endif %}
 
+    </form>
+  </div>
 
+{% endblock content %}
 
-
-</body>
-<style>
-
-
+{% block style %}
 
 textarea.inputs {
   height: 215px;
@@ -127,5 +122,5 @@ header {
 
 }
 
-</style>
-</html>
+{% endblock style %}
+

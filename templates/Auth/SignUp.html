@@ -1,8 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <style>
+{% extends "base.html" %}
+
+
+{% block style %}
     * {
       box-sizing: border-box;
     }
@@ -79,9 +78,9 @@
     .btn:hover, .btn2:hover {
       background: #3a66c4;
     }
-  </style>
-</head>
-<body>
+{% endblock style %}
+
+{% block content %}
 
   <div class="register">
     <h1 class="p1">sign up</h1>
@@ -108,13 +107,5 @@
 
   
 
-</body>
-</html>
+{% endblock content %}
 
-
-
-
-  
-
-</body>
-</html>

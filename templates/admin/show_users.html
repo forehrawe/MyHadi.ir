@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Show Users</title>
-  <style>
+{% extends "base.html" %}
+{% block title %}Show Users{% endblock title %}
+{% block style %}
     * {
       box-sizing: border-box;
     }
@@ -76,9 +73,8 @@
     .btn:hover {
       background: #3a66c4;
     }
-  </style>
-</head>
-<body>
+{% endblock style %}
+{% block content %}
 
   <div class="show_users">
     <h1 class="p1">Show Users</h1>
@@ -99,17 +95,4 @@
   
 
 
-</body>
-
-
-
-
-
-  
-
-</body>
-</html>
-
-
-
-
+{% endblock content %}

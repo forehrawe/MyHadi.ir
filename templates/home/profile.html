@@ -1,10 +1,6 @@
-<!doctype html>
-<html lang="fa">
-<head>
-  <meta charset="UTF-8">
-  <title>Profile</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <style>
+{% extends "base.html" %}
+{% block title %}Profile{% endblock title %}
+{% block style %}
     body, html {
       background-image: url("{{ url_for('static', filename='images/bck.jpg') }} ");
       height: 100%;
@@ -94,9 +90,8 @@
         font-size: 14px;
       }
     }
-  </style>
-</head>
-<body>
+{% endblock style %}
+{% block content %}
 <header>
   <h1>Profile</h1>
 </header>
@@ -134,5 +129,5 @@
 
   </form>
 </div>
-</body>
-</html>
+{% endblock content %}
+

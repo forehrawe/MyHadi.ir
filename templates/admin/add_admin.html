@@ -1,8 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <style>
+{% extends "base.html" %}
+{% block style %}
     * {
       box-sizing: border-box;
     }
@@ -75,9 +72,8 @@
     .btn:hover {
       background: #3a66c4;
     }
-  </style>
-</head>
-<body>
+{% endblock style %}
+{% block content %}
 
   <div class="authadmin">
     <h1 class="p1">Add Admin</h1>
@@ -104,16 +100,7 @@
   
 
 
-</body>
-
-
-
-
-
-  
-
-</body>
-</html>
+{% endblock content %}
 
 
 

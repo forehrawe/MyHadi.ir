@@ -1,6 +1,5 @@
-<!DOCTYPE html>
-<html lang="fa">
-  <style>
+{% extends "base.html" %}
+{% block style %}
     body { font-family: sans-serif; background: #f8f8f8; padding: 20px; }
     .post { background: white; padding: 15px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 0 5px #ccc; }
     .post-title { margin: 0; color: #333; }
@@ -36,17 +35,11 @@
     .fab svg {
       display: block;
     } 
-    
-    
-  </style>
-<head>
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta charset="UTF-8">
-  <title>Posts</title>
-  
-</head>
-<body>
+{% endblock style %}
+
+{% block title %}Posts{% endblock title %}
+
+{% block content %}
   <h2>Recent Posts</h2>
   
   {% for post in posts %}
@@ -61,6 +54,7 @@
 
 
 
+
   <a href="/posts/add-post" class="fab" aria-label="Add Post">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" >
       <path d="M12 5V19" stroke="white" stroke-width="2" stroke-linecap="round"/>
@@ -71,5 +65,5 @@
 
 
 
-</body>
-</html>
+{% endblock content %}
+
