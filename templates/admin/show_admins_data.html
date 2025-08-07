@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Admins Data</title>
+</head>
+<body>
+{% if result is not none %}
+    {% for user in result %}
+        <p>{{ user }}</p>
+        <hr>
+    {% endfor %}
+    
+{% endif %}
+</body>
+</html>

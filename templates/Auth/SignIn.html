@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body, html {
+        background-image: url("{{ url_for('static', filename='images/bck.jpg') }} ");
+        height: 100%;
+        background-attachment: fixed; 
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+
+    }
+
+    .register {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      height: 535px;
+      padding: 20px;
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    }
+
+
+
+    .p1 {
+      color: white;
+      text-transform: uppercase;
+      font-size: 26px;
+      margin-bottom: 20px;
+      font-family: sans-serif;
+    }
+
+    input {
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(0,0,0,0.3);
+      border-radius: 10px;
+      color: #fff;
+      font-size: 15px;
+      text-align: left;
+      outline: none;
+    }
+
+    input:focus {
+      box-shadow: 0 0 10px rgba(255,255,255,0.4);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 0;
+      width: 100%;
+      font-size: 15px;
+      color: #fff;
+      background: #4a77d4;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 10px;
+      text-decoration: none;
+      font-family: verdana;
+    }
+
+
+    .btn-code {
+      display: inline-block;
+      padding: 10px 0;
+      width: 27%;
+      font-size: 15px;
+      color: #fff;
+      background: #4a77d4;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 10px;
+      font-family: verdana;
+    }
+
+    .btn:hover {
+      background: #3a66c4;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="register">
+    <h1 class="p1">sign In</h1>
+    
+    <input id="email" type="text" name="email" placeholder="E-Mail" required />
+    <input id="password" type="password" name="password" placeholder="Password" required />
+    <input id="vcode" style="width: 70%; float: left;" type='text' placeholder='Verification Code' required />
+    <div id="container"><button type='submit' class='btn-code' onclick="action(event, 'sendcode')">Send</button></div>
+    <button type="submit" class="btn" onclick="action(event, 'login')">Login</button>
+    <a class="btn" href="signup">Sign Up</a>
+
+
+        <p id="result" style="color: white; font-family: sans-serif"></p>
+
+  </div>
+  
+
+
+</body>
+
+
+
+
+
+  
+
+</body>
+<script>
+
+  function action(event, operation) {
+    event.preventDefault();
+
+    if (operation == 'sendcode'){  
+
+      var container = document.getElementById('container')
+      container.innerHTML = '<p>Sent</p>'
+
+      var enteredCode = document.getElementById('vcode').value;
+      var email = document.getElementById('email').value;
+
+      fetch('/signin', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: 'enteredCode=' + encodeURIComponent(enteredCode) + 
+        '&email=' + encodeURIComponent(email) + '&operation=' + encodeURIComponent(operation)
+    })
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById('result').innerText = data.message
+    })
+  }
+    
+
+
+    if (operation == 'login') {
+      
+
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;
+      var vcode = document.getElementById('vcode').value;
+
+      fetch('/signin', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: 'email=' + encodeURIComponent(email) + 
+      '&password=' + encodeURIComponent(password) +
+      '&vcode=' + encodeURIComponent(vcode) +  
+      '&operation=' + encodeURIComponent(operation)
+
+      })
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('result').innerText = data.message
+      })
+      
+      
+    }
+  
+    
+  }
+
+
+  
+
+
+</script>
+</html>
