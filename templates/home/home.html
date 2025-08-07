@@ -3,16 +3,6 @@
 
 {% block title %}Main Page{% endblock title %}
 {% block head %}
-  <nav class="navbar navbar-expand navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <div class="navbar-nav">
-    <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-    <a class="nav-item nav-link" href="#">Features</a>
-    <a class="nav-item nav-link" href="#">Pricing</a>
-    <a class="nav-item nav-link disabled" href="#">Disabled</a>
-  </div>
-  <button onclick="logout(event, 'logout')" style="position: absolute; left: 93%; border: none; background: none; font-size: 17px; color: red"><i class="fas fa-sign-out-alt"></i></button>
-</nav>
 
 {% endblock head %}
 
@@ -42,11 +32,11 @@
 
 .menu {
     position: absolute;
-    top: 55%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 500px;
-    height: 500px;
+    height: 440px;
     padding: 20px;
     text-align: center;
     background-color: rgba(255, 255, 255, 0.096);
@@ -55,10 +45,8 @@
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.61);
     font-family: arial;
+    z-index: 10;
     }
-
-
-
 
 
 
@@ -86,6 +74,9 @@
     width: 90%;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.28);
 }
+.routes:hover {
+  text-decoration: none;
+}
 
 
 
@@ -102,7 +93,7 @@ header {
 @media only screen and (max-width: 767px){
   .menu{
     width: 80%;
-    height: 80%;
+    height: 73%;
     top: 55%
   }
 
