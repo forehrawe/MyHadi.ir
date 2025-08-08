@@ -1,4 +1,4 @@
-from flask import request, render_template, Blueprint, redirect,session
+from flask import request, render_template, Blueprint, redirect,session, jsonify
 import mysql.connector
 from routes.admin.check_permission import get_database
 
@@ -46,6 +46,12 @@ def profile():
         return render_template('home/errlogin.html')
 
     if request.method == 'POST':
+        
+
+        operation = request.form.get('operation')
+        if operation == 'logout':
+            session.clear()
+            return jsonify(message='Logged Out.')
         
         pnum = request.form.get('phone_number')
         address = request.form.get('address')

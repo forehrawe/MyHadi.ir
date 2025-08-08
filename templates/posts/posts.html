@@ -1,13 +1,34 @@
 {% extends "base.html" %}
 {% block style %}
-    body { font-family: sans-serif; background: #f8f8f8; padding: 20px; }
-    .post { background: white; padding: 15px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 0 5px #ccc; }
+    body { 
+      font-family: sans-serif;
+        background: #f8f8f8;
+        background-image: url("{{ url_for('static', filename='images/bck.jpg') }} ");
+        background-attachment: fixed; 
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;     
+      
+      
+      }
+
+    .post { 
+      background: white;
+      padding: 15px; margin-bottom: 20px; 
+      border-radius: 8px; 
+      box-shadow: 0 0 5px #ccc; 
+      margin-left: 20px;
+      width: 97%
+    }
+    @media only screen and (max-width: 767px) {
+      .post {
+      width: 90%
+      }
+    }
+
+
     .post-title { margin: 0; color: #333; }
-    .post-meta { font-size: 0.9em; color: gray; }
-    .read-more { text-decoration: none; color: #0066cc; }
-
-
-
+    .post-meta { font-size: 0.9em; color: green; }
 
 
     .fab {
@@ -40,7 +61,7 @@
 {% block title %}Posts{% endblock title %}
 
 {% block content %}
-  <h2>Recent Posts</h2>
+  <h2 style="margin: 20px; color: white">Recent Posts</h2>
   
   {% for post in posts %}
     <div class="post">
