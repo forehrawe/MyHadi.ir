@@ -1,44 +1,21 @@
-<nav>
-  <!-- دکمه همبرگری سمت راست بالا -->
-  <button id="menu-btn" aria-expanded="false" type="button"
-    class="fixed top-4 right-4 p-2 w-10 h-10 text-gray-700 rounded hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-400 z-50 bg-white/80 backdrop-blur-sm">
-    <span class="sr-only">باز کردن منو</span>
-    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-      <line x1="3" y1="6" x2="21" y2="6" />
-      <line x1="3" y1="12" x2="21" y2="12" />
-      <line x1="3" y1="18" x2="21" y2="18" />
-    </svg>
-  </button>
-
-  <!-- منوی اسلایدی سمت راست -->
-  <div id="menu" class="fixed top-0 right-0 h-full w-64 bg-white/60 backdrop-blur-md shadow transform translate-x-full transition-transform duration-300 ease-in-out z-40">
-    <ul class="flex flex-col mt-16 p-4 space-y-4">
-      <li><a href="#" class="block text-gray-900 hover:text-blue-600">خانه</a></li>
-      <li><a href="#" class="block text-gray-900 hover:text-blue-600">درباره</a></li>
-      <li><a href="#" class="block text-gray-900 hover:text-blue-600">تماس</a></li>
-    </ul>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="navbar-nav">
+    <a class="nav-item nav-link" href="signin">SignIn</a>
+    <a class="nav-item nav-link" href="signup">SignUp</a>
+    <a class="nav-item nav-link" href="messenger">Messenger</a>
+    <a class="nav-item nav-link" href="posts">Posts</a>
+    <a class="nav-item nav-link" href="profile">Profile</a>
   </div>
 </nav>
 
-
-
-<script>
-  const btn = document.getElementById('menu-btn');
-  const menu = document.getElementById('menu');
-  const midMenu = document.querySelector('.menu');
-
-  btn.addEventListener('click', () => {
-    const open = menu.classList.contains('translate-x-0');
-    if (open) {
-      menu.classList.replace('translate-x-0', 'translate-x-full');
-      btn.setAttribute('aria-expanded', 'false');
-      midMenu.classList.remove('inactive');
-    } else {
-      menu.classList.replace('translate-x-full', 'translate-x-0');
-      btn.setAttribute('aria-expanded', 'true');
-      midMenu.classList.add('inactive');
-    }
-  });
-</script>
-
-<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@media (max-width: 991.98px) {
+  .navbar-nav {
+    flex-direction: row !important;
+  }
+  .navbar-nav .nav-link {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+</style>
