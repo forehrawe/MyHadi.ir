@@ -2,18 +2,7 @@
 
     {% block title %}Messenger{% endblock title %}
     {% block style %}
-        header {
-            background-color: #757575;
-            color: #ffffff;
-            text-align: center;
-            padding: 10px;
-            font-family: arial;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            
-        }
+
 
         body {
             background-image: url("{{ url_for('static', filename='images/bck.jpg') }} ");
@@ -98,9 +87,7 @@
 
 
 {% block content %}
-    <header>
-        Messenger
-    </header>
+
     <div class="messages">
 
         <a href="/messenger/create-conv" class="fab" aria-label="Add Post">
