@@ -1,10 +1,10 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="navbar-nav">
-    <a class="nav-item nav-link" href="signin">SignIn</a>
-    <a class="nav-item nav-link" href="signup">SignUp</a>
-    <a class="nav-item nav-link" href="messenger">Messenger</a>
-    <a class="nav-item nav-link" href="posts">Posts</a>
-    <a class="nav-item nav-link" href="profile">Profile</a>
+    <a class="nav-item nav-link" href="{{ url_for('signin.signin') }}">SignIn</a>
+    <a class="nav-item nav-link" href="{{ url_for('signup.signup') }}">SignUp</a>
+    <a class="nav-item nav-link" href="{{ url_for('messenger.messenger') }}">Messenger</a>
+    <a class="nav-item nav-link" href="{{ url_for('posts.post') }}">Posts</a>
+    <a class="nav-item nav-link" href="{{ url_for('profile.profile') }}">Profile</a>
   </div>
 </nav>
 
