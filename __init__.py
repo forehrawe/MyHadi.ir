@@ -28,7 +28,7 @@ def create_app():
     from routes.messenger.messenger import messegner_bp
     from routes.messenger.create_conversation import create_conv_messenger_bp
     from routes.messenger.chat_url import chat_url_bp
-    from routes.changepassword import changepass_bp
+    from routes.Auth.changepassword import changepass_bp
 
     app.register_blueprint(signin_bp)
     app.register_blueprint(signup_bp)
