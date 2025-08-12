@@ -22,7 +22,6 @@ def create_app():
     from routes.home import HomePage_bp
     from routes.admin.show_users import show_users_bp
     from routes.profile import profile_bp
-    from routes.posts.posts import posts_bp
     from routes.posts.registerposts import registerposts_bp
     from routes.admin.del_post import del_post_bp
     from routes.messenger.messenger import messegner_bp
@@ -39,7 +38,6 @@ def create_app():
     app.register_blueprint(HomePage_bp)
     app.register_blueprint(show_users_bp)
     app.register_blueprint(profile_bp)
-    app.register_blueprint(posts_bp)
     app.register_blueprint(registerposts_bp)
     app.register_blueprint(del_post_bp)
     app.register_blueprint(messegner_bp)

@@ -5,7 +5,7 @@ from routes.admin.check_permission import get_database
 registerposts_bp = Blueprint('registerposts', __name__)
 
 
-@registerposts_bp.route('/posts/add-post', methods=['GET', 'POST'])
+@registerposts_bp.route('/add-post', methods=['GET', 'POST'])
 def createPost():
     
     msg = None
