@@ -28,6 +28,7 @@ def create_app():
     from routes.messenger.create_conversation import create_conv_messenger_bp
     from routes.messenger.chat_url import chat_url_bp
     from routes.Auth.changepassword import changepass_bp
+    from routes.yt_downloader import ytDownloader_bp
 
     app.register_blueprint(signin_bp)
     app.register_blueprint(signup_bp)
@@ -44,5 +45,6 @@ def create_app():
     app.register_blueprint(create_conv_messenger_bp)
     app.register_blueprint(chat_url_bp)
     app.register_blueprint(changepass_bp)
+    app.register_blueprint(ytDownloader_bp)
 
     return app

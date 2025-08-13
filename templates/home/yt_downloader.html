@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% block title %}YouTube Downloader{% endblock title %}
+{% block content %}
+    <div class="frame">
+
+        <input id="url" type="text" class="url" placeholder="URL" required />
+        <button type="button" onclick="download(event)" class="btn">Submit</button>
+        <p id="result"></p>
+
+    </div>
+    
+{% endblock content %}
+{% block style %}
+
+
+body, html {
+        background-image: url("{{ url_for('static', filename='images/bck.jpg') }} ");
+        height: 110%;
+        background-attachment: fixed; 
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+
+    }
+
+
+    .frame {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 500px;
+        height: 155px;
+        padding: 20px;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.094);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.61);
+        font-family: arial;
+    }
+
+    @media only screen and (max-width: 767px) {
+        .frame {
+            height: 300px;
+            width: 300px;
+            
+        }
+    }
+    .url {
+        width: 90%;
+        margin: 8px 0;
+        padding: 10px;
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(0,0,0,0.3);
+        border-radius: 10px;
+        color: #fff;
+        font-size: 15px;
+        text-align: left;
+        outline: none;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 10px 0;
+        width: 94.3%;
+        font-size: 15px;
+        color: #fff;
+        background: #4a77d4;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        margin-top: 10px;
+        text-decoration: none;
+        font-family: verdana;
+    }
+{% endblock style %}
+{% block scripts %}
+    function download(event){
+        event.preventDefault()
+        var url = document.getElementById('url').value;
+
+        fetch('/yt-downloader', {
+            method: "POST",
+            headers: {'Content-Type':'application/x-www-form-urlencoded'},
+            body: 'url=' + encodeURIComponent(url)
+        })
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('result').innerHTML = data.msg;
+        })
+        .catch(error => {
+            document.getElementById('result').innerHTML = 'Error: ' + error;
+        });
+    }
+
+{% endblock scripts %}
