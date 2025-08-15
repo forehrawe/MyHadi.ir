@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, session, jsonify
-from routes.admin.check_permission import get_database
+from get_database import get_database
 import hashlib
 
 

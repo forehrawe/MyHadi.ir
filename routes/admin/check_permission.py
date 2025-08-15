@@ -1,15 +1,5 @@
 from flask import session
-import mysql.connector
-
-def get_database():
-    return mysql.connector.connect(
-        host='localhost',
-        user='root',
-        password='',
-        database='users'
-    )
-
-
+from get_database import get_database
 
 def check_permission():
     token = session.get('token')

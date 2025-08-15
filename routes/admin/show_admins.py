@@ -1,5 +1,6 @@
 from flask import request, render_template, Blueprint
-from routes.admin.check_permission import get_database, check_permission
+from routes.admin.check_permission import check_permission
+from get_database import get_database
 
 show_admin_bp = Blueprint('show_admin', __name__)
 

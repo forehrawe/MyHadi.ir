@@ -1,5 +1,5 @@
 from flask import render_template, request, session, Blueprint, url_for, redirect
-from routes.admin.check_permission import get_database
+from get_database import get_database
 from datetime import datetime, timezone
 
 chat_url_bp = Blueprint('chat_url_bp', __name__)

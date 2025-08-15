@@ -1,7 +1,7 @@
 from flask import Blueprint, request, render_template, flash, redirect, url_for
 import hashlib
 import secrets
-from routes.admin.check_permission import get_database
+from get_database import get_database
 import mysql.connector
 
 

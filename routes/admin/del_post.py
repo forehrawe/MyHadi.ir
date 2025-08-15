@@ -1,5 +1,6 @@
 from flask import render_template, Blueprint, request
-from routes.admin.check_permission import check_permission, get_database
+from routes.admin.check_permission import check_permission
+from get_database import get_database
 
 del_post_bp = Blueprint('del_post', __name__)
 

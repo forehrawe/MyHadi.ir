@@ -1,5 +1,5 @@
 from flask import render_template, Blueprint
-from routes.admin.check_permission import get_database
+from get_database import get_database
 
 HomePage_bp = Blueprint('home', __name__)
 

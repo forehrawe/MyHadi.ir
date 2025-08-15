@@ -1,5 +1,6 @@
 from flask import request, render_template, Blueprint
-from .check_permission import check_permission, get_database
+from .check_permission import check_permission
+from get_database import get_database
 
 
 show_users_bp = Blueprint('show_users', __name__)

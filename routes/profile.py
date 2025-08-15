@@ -1,6 +1,6 @@
 from flask import request, render_template, Blueprint, redirect,session, jsonify
 import mysql.connector
-from routes.admin.check_permission import get_database
+from get_database import get_database
 
 
 

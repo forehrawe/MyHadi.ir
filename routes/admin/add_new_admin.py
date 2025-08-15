@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, request
-from routes.admin.check_permission import get_database, check_permission
+from routes.admin.check_permission import check_permission
+from get_database import get_database
 import mysql.connector
 
 add_new_admin_bp = Blueprint('NewAdminBP', __name__)

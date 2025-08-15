@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, session, redirect
-from routes.admin.check_permission import get_database
+from get_database import get_database
 from datetime import datetime, timezone
 import secrets
 import mysql.connector

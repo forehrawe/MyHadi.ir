@@ -1,5 +1,6 @@
 from flask import Blueprint, request, render_template
-from routes.admin.check_permission import get_database, check_permission
+from routes.admin.check_permission import check_permission
+from get_database import get_database
 import mysql.connector
 
 del_admin_bp = Blueprint('delAdmin', __name__)

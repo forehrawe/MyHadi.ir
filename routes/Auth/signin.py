@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, session, jsonify
 import hashlib
-from routes.admin.check_permission import get_database
+from get_database import get_database
 from email_utils.sender import send_email
 import random
 from datetime import datetime, timedelta, timezone
