@@ -5,14 +5,14 @@ def encoding(password):
 
     encoded = ""
     for p in password:
-        for letter in algorithm:
-            if letter == p:
-                encoded += algorithm.get(letter)
-                
-    encoded = hashlib.sha256(encoded.encode()).hexdigest()
-    encoded = hashlib.sha512(encoded.encode()).hexdigest()
+        if p in algorithm:
+            encoded += algorithm[p]
 
-    return encoded
+    encoded224 = hashlib.sha224(encoded.encode()).hexdigest()
+    encoded256 = hashlib.sha256(encoded.encode()).hexdigest()
+    encoded512 = hashlib.sha512((encoded256 + encoded224).encode()).hexdigest()
+
+    return encoded512
 
 
 enc = encoding('po2Jbist')
