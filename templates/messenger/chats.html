@@ -210,29 +210,3 @@
 
   }
 {% endblock scripts %}
-
-
-
-
-
-<!-- <script>
-  function removeMessage(messageId) {
-      const msgElement = document.getElementById("msg-" + messageId);
-      if (msgElement) {
-          msgElement.remove(); // پیام رو از صفحه حذف می‌کنه
-      }
-  }
-  </script> -->
-  
-
-  <!-- {% for message_id, content, date, sender in messages %}
-  <div class="message" id="msg-{{ message_id }}">
-      <h3 style="color: rgb(164, 164, 164);">{{ sender }}</h3>
-      <p style="color: white;">{{ content|e }}</p>
-      <small style="color: rgb(170, 170, 170);">{{ date }}</small>
-      
-      <button class="delete-btn" onclick="removeMessage('{{ message_id }}')">
-          <i class="fas fa-trash"></i>
-      </button>
-  </div>
-{% endfor %} -->
