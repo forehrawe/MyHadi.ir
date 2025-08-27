@@ -28,7 +28,7 @@ def create_app():
     from routes.messenger.create_conversation import create_conv_messenger_bp
     from routes.messenger.chat_url import chat_url_bp
     from routes.Auth.changepassword import changepass_bp
-    from routes.admin.messages_from_bot import telebot_bp
+    from routes.admin.api_key import api_bp
 
 
     app.register_blueprint(signin_bp)
@@ -46,7 +46,7 @@ def create_app():
     app.register_blueprint(create_conv_messenger_bp)
     app.register_blueprint(chat_url_bp)
     app.register_blueprint(changepass_bp)
-    app.register_blueprint(telebot_bp)
+    app.register_blueprint(api_bp)
 
 
     return app
